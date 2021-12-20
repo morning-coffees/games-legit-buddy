@@ -8,6 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gameslegitbuddy/counter/counter.dart';
+import 'package:gameslegitbuddy/drawer/drawer.dart';
 import 'package:gameslegitbuddy/l10n/l10n.dart';
 
 class CounterPage extends StatelessWidget {
@@ -31,6 +32,7 @@ class CounterView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(l10n.counterAppBarTitle)),
       body: const Center(child: CounterText()),
+      drawer: const DrawerPage(),
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
