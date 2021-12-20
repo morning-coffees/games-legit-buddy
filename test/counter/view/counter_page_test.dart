@@ -9,35 +9,35 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:gameslegitbuddy/counter/counter.dart';
+import 'package:gameslegitbuddy/Home/home.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../helpers/helpers.dart';
 
-class MockCounterCubit extends MockCubit<int> implements CounterCubit {}
+class MockHomeCubit extends MockCubit<int> implements HomeCubit {}
 
 void main() {
-  group('CounterPage', () {
-    testWidgets('renders CounterView', (tester) async {
-      await tester.pumpApp(const CounterPage());
-      expect(find.byType(CounterView), findsOneWidget);
+  group('HomePage', () {
+    testWidgets('renders HomeView', (tester) async {
+      await tester.pumpApp(const HomePage());
+      expect(find.byType(HomeView), findsOneWidget);
     });
   });
 
   group('CounterView', () {
-    late CounterCubit counterCubit;
+    late HomeCubit homeCubit;
 
     setUp(() {
-      counterCubit = MockCounterCubit();
+      homeCubit = MockHomeCubit();
     });
 
     testWidgets('renders current count', (tester) async {
       const state = 42;
-      when(() => counterCubit.state).thenReturn(state);
+      when(() => homeCubit.state).thenReturn(state);
       await tester.pumpApp(
         BlocProvider.value(
-          value: counterCubit,
-          child: const CounterView(),
+          value: homeCubit,
+          child: const HomeView(),
         ),
       );
       expect(find.text('$state'), findsOneWidget);
@@ -45,30 +45,30 @@ void main() {
 
     testWidgets('calls increment when increment button is tapped',
         (tester) async {
-      when(() => counterCubit.state).thenReturn(0);
-      when(() => counterCubit.increment()).thenReturn(null);
+      when(() => homeCubit.state).thenReturn(0);
+      when(() => homeCubit.increment()).thenReturn(null);
       await tester.pumpApp(
         BlocProvider.value(
-          value: counterCubit,
-          child: const CounterView(),
+          value: homeCubit,
+          child: const HomeView(),
         ),
       );
       await tester.tap(find.byIcon(Icons.add));
-      verify(() => counterCubit.increment()).called(1);
+      verify(() => homeCubit.increment()).called(1);
     });
 
     testWidgets('calls decrement when decrement button is tapped',
         (tester) async {
-      when(() => counterCubit.state).thenReturn(0);
-      when(() => counterCubit.decrement()).thenReturn(null);
+      when(() => homeCubit.state).thenReturn(0);
+      when(() => homeCubit.decrement()).thenReturn(null);
       await tester.pumpApp(
         BlocProvider.value(
-          value: counterCubit,
-          child: const CounterView(),
+          value: homeCubit,
+          child: const HomeView(),
         ),
       );
       await tester.tap(find.byIcon(Icons.remove));
-      verify(() => counterCubit.decrement()).called(1);
+      verify(() => homeCubit.decrement()).called(1);
     });
   });
 }

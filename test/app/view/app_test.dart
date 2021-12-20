@@ -6,14 +6,14 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:gameslegitbuddy/Home/home.dart';
 import 'package:gameslegitbuddy/app/app.dart';
-import 'package:gameslegitbuddy/counter/counter.dart';
 
 void main() {
   group('App', () {
-    testWidgets('renders CounterPage', (tester) async {
+    testWidgets('renders HomePage', (tester) async {
       await tester.pumpWidget(const App());
-      expect(find.byType(CounterPage), findsOneWidget);
+      expect(find.byType(HomePage), findsOneWidget);
     });
   });
 }

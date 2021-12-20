@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gameslegitbuddy/l10n/l10n.dart';
 
 class DrawerPage extends StatelessWidget {
   const DrawerPage({Key? key}) : super(key: key);
@@ -21,14 +20,14 @@ class DrawerPage extends StatelessWidget {
             child: Text(''),
           ),
           ListTile(
-            title: const Text('Item 1'),
+            title: const Text('Scammers'),
             onTap: () {
               // Update the state of the app.
               // ...
             },
           ),
           ListTile(
-            title: const Text('Item 2'),
+            title: const Text('Legit Sellers'),
             onTap: () {
               // Update the state of the app.
               // ...

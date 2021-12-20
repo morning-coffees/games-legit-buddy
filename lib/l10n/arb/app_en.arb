@@ -1,7 +1,7 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
+    "homeAppBarTitle": "Counter",
+    "@homeAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
     },
     "drawerTitle": "Draweraa"
