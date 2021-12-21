@@ -20,18 +20,26 @@ class DrawerPage extends StatelessWidget {
             child: Text(''),
           ),
           ListTile(
-            title: const Text('Scammers'),
-            onTap: () {
-              // Update the state of the app.
-              // ...
-            },
+            leading: const IconTheme(
+              data: IconThemeData(color: Colors.red),
+              child: Icon(Icons.restore_from_trash_rounded),
+            ),
+            title: const Text(
+              'Scammers',
+              style: TextStyle(color: Colors.redAccent),
+            ),
+            onTap: () {},
           ),
           ListTile(
-            title: const Text('Legit Sellers'),
-            onTap: () {
-              // Update the state of the app.
-              // ...
-            },
+            leading: const IconTheme(
+              data: IconThemeData(color: Colors.blueAccent),
+              child: Icon(Icons.check),
+            ),
+            title: const Text(
+              'Legit Sellers',
+              style: TextStyle(color: Colors.blueAccent),
+            ),
+            onTap: () {},
           ),
         ],
       ),
